@@ -176,4 +176,35 @@ Right
 Did you got it? If you want to define a component theme that inherit properties
 you need keep this cascade of information.
 
-Below an example
+## Component Layers
+
+Now with our structure of variables we can think in the definition of our project
+and components structure.
+
+First of all we need to understand the concept of [CSS Layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer). The Rule `@layer` create a level of CSS lower than
+regular CSS out of any `@layer`.
+
+We can create many layers and define the priority of one over other. Starting with
+these initial layers:
+
+```css
+@layer base, component;
+```
+
+We can say that everything declared like a component is more important than a base
+definion, and either every style out of any layer will be higher priority than
+any layer style. With this concept we can make our layers of base definition and
+components with lower priority than the aplication itself, how we can see in the
+following example:
+
+```css
+@layer base, component;
+
+@layer base {
+  body {
+    --theme-color: var(--color-dark);
+
+    color: var(--theme-color);
+  }
+}
+```
