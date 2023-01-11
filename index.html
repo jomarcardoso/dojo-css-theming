@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Document</title>
+  <style>
+    :root {
+      --color-primary: #22bb44;
+      --color-dark: #222;
+      --color-white: #fff;
+    }
+
+    body {
+      --theme-action-color: var(--color-primary);
+
+      /* this is a mistake */
+      --button-bg: var(--theme-action-color);
+    }
+
+    button {
+      background: var(--button-bg);
+      color: var(--color-white);
+    }
+
+    .container {
+      /* because you can't override since the value of  */
+      --theme-action-color: var(--color-dark);
+    }
+
+  </style>
+</head>
+
+<body>
+  <button>button out of container</button>
+  <div class="container">
+    <button>button in the container</button>
+  </div>
+</body>
+
+</html>

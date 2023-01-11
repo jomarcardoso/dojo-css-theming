@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Document</title>
+  <style>
+    /* theme.css */
+    :root {
+      --color-primary: #22bb44;
+      --color-dark: #222;
+      --color-dark-secondary: #222;
+      --color-light: #f1f1f1;
+      --color-white: #fff;
+    }
+
+    body {
+      --theme-action-color: var(--color-primary);
+      --theme-action-color-contrast: var(--color-white);
+    }
+
+    /* button.css */
+    button {
+      background: var(--button-bg, var(--theme-action-color));
+      color: var(--button-color, var(--theme-action-color-contrast));
+    }
+
+    .paper {
+      --button-bg: var(--color-dark);
+
+      background: var(--paper-bg, var(--color-light));
+      padding: 2rem;
+    }
+
+  </style>
+</head>
+
+<body>
+  <button>button out of paper</button>
+
+  <div class="paper">
+    <button>button in the paper</button>
+  </div>
+</body>
+
+</html>
