@@ -83,7 +83,6 @@ If we made all right the layer of the component will inherit properties to use.
 In the componente we don't need to necessarily declare itself variable, just use.
 
 ```css
-/* button.css */
 button {
   background: var(--button-bg, var(--theme-action-color));
   color: var(--button-color, var(---theme-action-color-contrast));
@@ -95,9 +94,30 @@ declare `--button-bg` the button will change its color.
 
 ```css
 .paper {
-  --button-bg: var(--color-dark);
+  --button-bg: var(--paper-button-bg, var(--color-dark));
 
   background: var(--paper-bg, var(--color-light));
+}
+```
+
+To declare the `--button-bg` will override the button color, but still you don't
+define the final value to the button, because the paper also can receive an
+overriden value in `--paper-button-bg`. See the example with three levels:
+
+```css
+button {
+  background: var(--button-bg, var(--theme-action-color));
+}
+
+.paper {
+  --button-bg: var(--paper-button-bg, var(--color-dark));
+}
+
+.notebook {
+  /* change background of button in the notebok */
+  --button-bg: var(--notebook-button-bg, var(--color-dark-variant));
+  /* change background of button in the paper in the notebook */
+  --paper-button-bg: var(--notebook-paper-button-bg, var(--color-light));
 }
 ```
 
@@ -155,3 +175,5 @@ Right
 
 Did you got it? If you want to define a component theme that inherit properties
 you need keep this cascade of information.
+
+Below an example
