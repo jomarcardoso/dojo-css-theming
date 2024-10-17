@@ -6,6 +6,14 @@ Challenges of theming:
 - **Dynamic theme:** The theme can be changed in client side.
 - **Page with sub themes:** The theme is different each site area. A base theme for the page and variant of it in sections of the page.
 
+## Resources
+
+### Custom properties
+
+### Custom properties fallback
+
+### @property
+
 Our theme will be made of the following layers:
 
 1. **variables** the unique values to use in the next layers;
