@@ -1,5 +1,11 @@
 # CSS Theming
 
+Challenges of theming:
+
+- **Multi-theme:** One of the main reasons to think about theming, is to create an structure that is able to evolve and a same component be shared for many brands or themes.
+- **Dynamic theme:** The theme can be changed in client side.
+- **Page with sub themes:** The theme is different each site area. A base theme for the page and variant of it in sections of the page.
+
 Our theme will be made of the following layers:
 
 1. **variables** the unique values to use in the next layers;
